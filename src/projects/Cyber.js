@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import ReactMarkdown from "react-markdown";
+
 import MarkdownLoader from "../util/MarkdownLoader";
 import CyberMD from "../markdowns/cyber.md";
 import { Link } from "@reach/router";
+
+// console.log(CyberMD.toString())
 
 function px2rem(px) {
   return px * 0.0625;
@@ -13,6 +17,7 @@ const DivWithImageBG = styled.div`
   height: 40vw;
   background-image: url("https://paper.dropbox.com/ep/redirect/image?url=https%3A%2F%2Fpaper-attachments.dropbox.com%2Fs_C73421103ED4FF4BECBEDB3327F37B0499475D18BEF95BD7A9667BA25068FBBA_1568343876437_Mask%2BGroup.png&hmac=OzTJmQz5wNv4DJdVnVBTYFX9tMvrDjlZFU5qrhrWZgE%3D");
   /* background-position: center center; */
+
   background-size: 100% auto;
   display: flex;
   justify-content: center;
@@ -134,28 +139,56 @@ const ProjectFooter = () => (
   </FooterWRapper>
 );
 
-const Cyber = () => (
-  <>
-    <DivWithImageBG>
-      <BigTitle>BUILDING A HUMANE DASHBOARD</BigTitle>
-    </DivWithImageBG>
+class Cyber extends Component {
+  state = { md: "# I'm loading man" };
 
-    <TextWrapper>
-      <SubtitleWrapper>
-        <SolidLine />
-        <SubtitleText>
-          Building Transparent and Trustable A.I. Dashboard for Cybersecurity
-          Operators
-        </SubtitleText>
-        <SolidLine />
-      </SubtitleWrapper>
-      {/* <MarkdownLoader>{CyberMD}</MarkdownLoader> */}
-      <MarkdownLoader children={CyberMD} />
-    </TextWrapper>
+  render() {
+    return (
+      <>
+        <DivWithImageBG>
+          <BigTitle>BUILDING A HUMANE DASHBOARD</BigTitle>
+        </DivWithImageBG>
 
-    <ProjectFooter />
-  </>
-);
+        <TextWrapper>
+          <SubtitleWrapper>
+            <SolidLine />
+            <SubtitleText>
+              Building Transparent and Trustable A.I. Dashboard for
+              Cybersecurity Operators
+            </SubtitleText>
+            <SolidLine />
+          </SubtitleWrapper>
+          <MarkdownLoader>{CyberMD}</MarkdownLoader>
+          {/* <MarkdownLoader source='http://kylinchen.design/cyber/static/media/cyber.55919798.md'/> */}
+        </TextWrapper>
+        <ProjectFooter />
+      </>
+    );
+  }
+}
+
+// const Cyber = () => {
+//   return (
+//     <>
+//       <DivWithImageBG>
+//         <BigTitle>BUILDING A HUMANE DASHBOARD</BigTitle>
+//       </DivWithImageBG>
+
+//       <TextWrapper>
+//         <SubtitleWrapper>
+//           <SolidLine />
+//           <SubtitleText>
+//             Building Transparent and Trustable A.I. Dashboard for Cybersecurity
+//             Operators
+//           </SubtitleText>
+//           <SolidLine />
+//         </SubtitleWrapper>
+//         {/* <MarkdownLoader>{CyberMD}</MarkdownLoader> */}
+//       </TextWrapper>
+//       <ProjectFooter />
+//     </>
+//   );
+// };
 
 // export { Cyber };
 export default Cyber;
