@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import MarkdownLoader from "../util/MarkdownLoader";
 import BorderMD from "../markdowns/border.md";
+// https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/57f7efa8a7ade755a3c6e076c19eb36c099d64a6/border.md
 import { Link } from "@reach/router";
 
 function px2rem(px) {
