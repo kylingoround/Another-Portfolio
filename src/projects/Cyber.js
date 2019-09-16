@@ -15,7 +15,7 @@ function px2rem(px) {
 const DivWithImageBG = styled.div`
   width: 100vw;
   height: 40vw;
-  background-image: url("https://paper.dropbox.com/ep/redirect/image?url=https%3A%2F%2Fpaper-attachments.dropbox.com%2Fs_C73421103ED4FF4BECBEDB3327F37B0499475D18BEF95BD7A9667BA25068FBBA_1568343876437_Mask%2BGroup.png&hmac=OzTJmQz5wNv4DJdVnVBTYFX9tMvrDjlZFU5qrhrWZgE%3D");
+  background-image: url("https://i.imgur.com/JwTHkOh.png");
   /* background-position: center center; */
 
   background-size: 100% auto;
@@ -175,29 +175,6 @@ class Cyber extends Component {
     );
   }
 }
-
-// const Cyber = () => {
-//   return (
-//     <>
-//       <DivWithImageBG>
-//         <BigTitle>BUILDING A HUMANE DASHBOARD</BigTitle>
-//       </DivWithImageBG>
-
-//       <TextWrapper>
-//         <SubtitleWrapper>
-//           <SolidLine />
-//           <SubtitleText>
-//             Building Transparent and Trustable A.I. Dashboard for Cybersecurity
-//             Operators
-//           </SubtitleText>
-//           <SolidLine />
-//         </SubtitleWrapper>
-//         {/* <MarkdownLoader>{CyberMD}</MarkdownLoader> */}
-//       </TextWrapper>
-//       <ProjectFooter />
-//     </>
-//   );
-// };
 
 export { Cyber };
 // export default Cyber;

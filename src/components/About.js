@@ -48,12 +48,12 @@ const About = () => (
         My name is Kylin Chen and I am a product / experience designer. With
         backgrounds from business, design and technology, and experiences from
         the start-up world, I excel at product strategies and UX operations. I
-        value both innovation and executions and I think about creating impacts
+        value both innovation and execution and I think about creating impacts
         before fixating pixels. I streamline complex process into bite-size
-        actions but I also love creating something novel and sily.
+        actions but I also love creating something novel and silly.
       </Text>
       <Text>
-        Currently in love with typography, design system, sci-fi (snow crush,
+        Currently in love with typography, design system, sci-fi (Snow Crush,
         not hunger games) and tacos.
       </Text>
 
