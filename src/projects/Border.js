@@ -137,27 +137,63 @@ const ProjectFooter = () => (
   </FooterWRapper>
 );
 
-const Border = () => (
-  <>
-    <DivWithImageBG>
-      <BigTitle>OTHER BARRIERS</BigTitle>
-    </DivWithImageBG>
+class Border extends Component {
+  state = { md: "# I'm loading man" };
+  componentDidMount() {
+    fetch(
+      "https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/57f7efa8a7ade755a3c6e076c19eb36c099d64a6/border.md"
+    )
+      .then(res => res.text())
+      // .then(t => console.log(t));
+      .then(t => this.setState({ md: t }));
+  }
+  render() {
+    return (
+      <>
+        <DivWithImageBG>
+          <BigTitle>OTHER BARRIERS</BigTitle>
+        </DivWithImageBG>
 
-    <TextWrapper>
-      <SubtitleWrapper>
-        <SolidLine />
-        <SubtitleText>
-          {/* Border walls not covered by your daily news. Or Trump. */}
-          OTHER BARRIERS is a data visualization that presents a bird’s eye view
-          of the barriers around the globe.
-        </SubtitleText>
-        <SolidLine />
-      </SubtitleWrapper>
-      <MarkdownLoader>{BorderMD}</MarkdownLoader>
-    </TextWrapper>
+        <TextWrapper>
+          <SubtitleWrapper>
+            <SolidLine />
+            <SubtitleText>
+              {/* Border walls not covered by your daily news. Or Trump. */}
+              OTHER BARRIERS is a data visualization that presents a bird’s eye
+              view of the barriers around the globe.
+            </SubtitleText>
+            <SolidLine />
+          </SubtitleWrapper>
+          <MarkdownLoader>{this.state.md}</MarkdownLoader>
+        </TextWrapper>
 
-    <ProjectFooter />
-  </>
-);
+        <ProjectFooter />
+      </>
+    );
+  }
+}
+
+// const Border = () => (
+//   <>
+//     <DivWithImageBG>
+//       <BigTitle>OTHER BARRIERS</BigTitle>
+//     </DivWithImageBG>
+
+//     <TextWrapper>
+//       <SubtitleWrapper>
+//         <SolidLine />
+//         <SubtitleText>
+//           {/* Border walls not covered by your daily news. Or Trump. */}
+//           OTHER BARRIERS is a data visualization that presents a bird’s eye view
+//           of the barriers around the globe.
+//         </SubtitleText>
+//         <SolidLine />
+//       </SubtitleWrapper>
+//       <MarkdownLoader>{BorderMD}</MarkdownLoader>
+//     </TextWrapper>
+
+//     <ProjectFooter />
+//   </>
+// );
 
 export { Border };

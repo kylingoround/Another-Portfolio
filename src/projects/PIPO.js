@@ -136,26 +136,61 @@ const ProjectFooter = () => (
   </FooterWRapper>
 );
 
-const PIPO = () => (
-  <>
-    <DivWithImageBG>
-      <BigTitle>Event sharing made easy</BigTitle>
-    </DivWithImageBG>
+class PIPO extends Component {
+  state = { md: "# I'm loading man" };
+  componentDidMount() {
+    fetch(
+      "https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/57f7efa8a7ade755a3c6e076c19eb36c099d64a6/pipo.md"
+    )
+      .then(res => res.text())
+      // .then(t => console.log(t));
+      .then(t => this.setState({ md: t }));
+  }
+  render() {
+    return (
+      <>
+        <DivWithImageBG>
+          <BigTitle>Event sharing made easy</BigTitle>
+        </DivWithImageBG>
 
-    <TextWrapper>
-      <SubtitleWrapper>
-        <SolidLine />
-        <SubtitleText>
-          Kickstarting a lightweight event-hosting and event-discovering App for
-          Young people in NYC.
-        </SubtitleText>
-        <SolidLine />
-      </SubtitleWrapper>
-      <MarkdownLoader>{PIPOMD}</MarkdownLoader>
-    </TextWrapper>
+        <TextWrapper>
+          <SubtitleWrapper>
+            <SolidLine />
+            <SubtitleText>
+              Kickstarting a lightweight event-hosting and event-discovering App
+              for Young people in NYC.
+            </SubtitleText>
+            <SolidLine />
+          </SubtitleWrapper>
+          <MarkdownLoader>{this.state.md}</MarkdownLoader>
+        </TextWrapper>
 
-    <ProjectFooter />
-  </>
-);
+        <ProjectFooter />
+      </>
+    );
+  }
+}
+
+// const PIPO = () => (
+//   <>
+//     <DivWithImageBG>
+//       <BigTitle>Event sharing made easy</BigTitle>
+//     </DivWithImageBG>
+
+//     <TextWrapper>
+//       <SubtitleWrapper>
+//         <SolidLine />
+//         <SubtitleText>
+//           Kickstarting a lightweight event-hosting and event-discovering App for
+//           Young people in NYC.
+//         </SubtitleText>
+//         <SolidLine />
+//       </SubtitleWrapper>
+//       <MarkdownLoader>{PIPOMD}</MarkdownLoader>
+//     </TextWrapper>
+
+//     <ProjectFooter />
+//   </>
+// );
 
 export { PIPO };
