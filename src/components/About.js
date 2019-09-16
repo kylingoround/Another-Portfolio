@@ -54,7 +54,7 @@ const About = () => (
       </Text>
       <Text>
         Currently in love with typography, design system, sci-fi (Snow Crush,
-        not hunger games) and tacos.
+        not Hunger Games) and tacos.
       </Text>
 
       <Hyper
