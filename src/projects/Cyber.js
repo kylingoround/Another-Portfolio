@@ -149,14 +149,16 @@ const Cyber = () => (
         </SubtitleText>
         <SolidLine />
       </SubtitleWrapper>
-      <MarkdownLoader>{CyberMD}</MarkdownLoader>
+      {/* <MarkdownLoader>{CyberMD}</MarkdownLoader> */}
+      <MarkdownLoader children={CyberMD} />
     </TextWrapper>
 
     <ProjectFooter />
   </>
 );
 
-export { Cyber };
+// export { Cyber };
+export default Cyber;
 
 // # Creating A Humane Dashboard
 
