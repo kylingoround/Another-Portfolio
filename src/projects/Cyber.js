@@ -112,16 +112,16 @@ const ProjectFooter = () => (
   <FooterWRapper>
     <DarkMe>
       <div>
-        <StyledLink to="/">
-          <EachNavOption>Border</EachNavOption>
+        <StyledLink to="/pipo">
+          <EachNavOption>pipo</EachNavOption>
         </StyledLink>
         <EachNavOption>-</EachNavOption>
-        <StyledLink to="/">
-          <EachNavOption>Pipo</EachNavOption>
+        <StyledLink to="/border">
+          <EachNavOption>border</EachNavOption>
         </StyledLink>
         <EachNavOption>-</EachNavOption>
-        <StyledLink to="/">
-          <EachNavOption>Magicam</EachNavOption>
+        <StyledLink to="/event">
+          <EachNavOption>event</EachNavOption>
         </StyledLink>
       </div>
     </DarkMe>

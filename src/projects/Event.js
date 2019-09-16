@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import MarkdownLoader from "../util/MarkdownLoader";
-import PIPOMD from "../markdowns/cyber.md";
+import EventMD from "../markdowns/event.md";
 import { Link } from "@reach/router";
 
 function px2rem(px) {
@@ -12,7 +12,7 @@ const DivWithImageBG = styled.div`
   width: 100vw;
   height: 40vw;
 
-  background-image: url("https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
+  background-image: url("https://images.unsplash.com/photo-1457419655743-2e0acc6b5122?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
   /* background-position: center center; */
   background-size: 100% auto;
   display: flex;
@@ -118,12 +118,12 @@ const ProjectFooter = () => (
           <EachNavOption>cyber</EachNavOption>
         </StyledLink>
         <EachNavOption>-</EachNavOption>
-        <StyledLink to="/border">
-          <EachNavOption>border</EachNavOption>
+        <StyledLink to="/pipo">
+          <EachNavOption>Pipo</EachNavOption>
         </StyledLink>
         <EachNavOption>-</EachNavOption>
-        <StyledLink to="/event">
-          <EachNavOption>event</EachNavOption>
+        <StyledLink to="/border">
+          <EachNavOption>border</EachNavOption>
         </StyledLink>
       </div>
     </DarkMe>
@@ -136,26 +136,26 @@ const ProjectFooter = () => (
   </FooterWRapper>
 );
 
-const PIPO = () => (
+const Event = () => (
   <>
     <DivWithImageBG>
-      <BigTitle>Event sharing made easy</BigTitle>
+      <BigTitle>conference website</BigTitle>
     </DivWithImageBG>
 
     <TextWrapper>
       <SubtitleWrapper>
         <SolidLine />
         <SubtitleText>
-          Kickstarting a lightweight event-hosting and event-discovering App for
-          Young people in NYC.
+          An event website that showcases key information and allow user to
+          register and find partners.
         </SubtitleText>
         <SolidLine />
       </SubtitleWrapper>
-      <MarkdownLoader>{PIPOMD}</MarkdownLoader>
+      <MarkdownLoader>{EventMD}</MarkdownLoader>
     </TextWrapper>
 
     <ProjectFooter />
   </>
 );
 
-export { PIPO };
+export { Event };

@@ -45,13 +45,14 @@ const MenuOptionWrapper = styled.div`
 const ScreenWrapper = styled.div`
   width: ${px2rem(550)}rem;
   height: ${px2rem(400)}rem;
-  background: yellow;
+  /* background: yellow; */
 `;
 
 const Img = styled.img`
   width: ${px2rem(550)}rem;
   height: ${px2rem(300)}rem;
   border: solid 8px black;
+  object-fit: cover;
 `;
 
 const MenuTitle = styled.div`
@@ -85,6 +86,11 @@ const ScreenSubtitle = styled.div`
   font-size: ${px2rem(35)}rem;
 `;
 
+const Spam = styled.span`
+  /* margin-left: 0.5rem; */
+  margin-right: 2rem;
+`;
+
 const MenuGroup = props => (
   <MenuWrapper>
     <MenuTitle>MENU</MenuTitle>
@@ -94,7 +100,6 @@ const MenuGroup = props => (
         <MenuText
           onMouseEnter={() => props.handleMouseEnter("cyber")}
           onMouseLeave={props.handleMouseLeave}
-          // onClick={() => props.handleMouseClick("cyber")}
         >
           <StyledLink to={"/cyber"}>
             {props.currentProject === "cyber" ? "> Cyber" : "Cyber"}
@@ -103,23 +108,28 @@ const MenuGroup = props => (
         <MenuText
           onMouseEnter={() => props.handleMouseEnter("pipo")}
           onMouseLeave={props.handleMouseLeave}
-          // onClick={() => props.handleMouseClick("pipo")}
         >
-          {props.currentProject === "pipo" ? "> PIPO" : "PIPO"}
+          <StyledLink to={"/pipo"}>
+            {props.currentProject === "pipo" ? "> PIPO" : "PIPO"}
+          </StyledLink>
         </MenuText>
+
         <MenuText
-          onMouseEnter={() => props.handleMouseEnter("magicam")}
+          onMouseEnter={() => props.handleMouseEnter("event")}
           onMouseLeave={props.handleMouseLeave}
-          // onClick={() => props.handleMouseClick("magicam")}
         >
-          {props.currentProject === "magicam" ? "> magicam" : "magicam"}
+          <StyledLink to={"/event"}>
+            {props.currentProject === "event" ? "> event" : "event"}
+          </StyledLink>
         </MenuText>
+
         <MenuText
           onMouseEnter={() => props.handleMouseEnter("border")}
           onMouseLeave={props.handleMouseLeave}
-          // onClick={() => props.handleMouseClick("border")}
         >
-          {props.currentProject === "border" ? "> border" : "border"}
+          <StyledLink to={"/border"}>
+            {props.currentProject === "border" ? "> border" : "border"}
+          </StyledLink>
         </MenuText>
       </MenuOptionWrapper>
     </CenterFlex>
@@ -132,7 +142,7 @@ const ScreenGroup = props => {
   projects[currentProject]
     ? (data = projects[currentProject])
     : (data = projects["default"]);
-  console.log(data);
+  // console.log(data);
 
   const { title, subtitle, thumbnail } = data;
 
@@ -140,7 +150,10 @@ const ScreenGroup = props => {
     <ScreenWrapper>
       <Img src={thumbnail} />
       <ScreenTitle>{title}</ScreenTitle>
-      <ScreenSubtitle>{subtitle}</ScreenSubtitle>
+      <ScreenSubtitle>
+        {subtitle &&
+          subtitle.map((d, i) => <Spam key={title + "-tag-" + i}>{d}</Spam>)}
+      </ScreenSubtitle>
     </ScreenWrapper>
   );
 };
@@ -155,36 +168,40 @@ class WorkScreen extends React.Component {
           "https://media1.tenor.com/images/5a934e84f67d2a61a118ec95b1d6cb74/tenor.gif?itemid=11312357"
       },
       cyber: {
-        title: "Design a humane dashboard",
-        subtitle: ["product", "ui / ux", "data viz"],
-        thumbnail: ""
+        title: "Design a Humane Dashboard",
+        subtitle: ["product", "ui / ux", "data-viz"],
+        thumbnail:
+          "https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1562648106933-FFOQ30HRGF252WPDXQN0/ke17ZwdGBToddI8pDm48kDBWDBfmefj1gvev6A5_eqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0o0Xp6UE5J-58PsGFefGLoY1T7k9l5G9NNniEsQShCnRKTdOMGvLMHUO8X0cWJJEWQ/image-asset.png?format=2500w"
       },
       pipo: {
-        title: "Event Sharing made Easy",
-        subtitle: ["mobile design", "product", "ui / ux"],
-        thumbnail: ""
+        title: "Event Sharing Made Easy",
+        subtitle: ["mobile", "product", "ui / ux"],
+        thumbnail:
+          "https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1562648429190-0V0O4NMFUKBR4596GG9B/ke17ZwdGBToddI8pDm48kK-6VZ_A-mpZPnQ1J7WFaxp7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwD1g8DYbkhCsgrhnj8CXZYCD5bU3QvC-q6Z8ONLSlwiQbJQ0xI_XvgfUfYGy5Dpw/image-asset.jpeg?format=2500w"
       },
-      // magicam: {
-      //   title: "Event Sharing made Easy",
-      //   subtitle: ["mobile design", "product", "ui / ux"],
-      //   thumbnail: ""
-      // },
       border: {
-        title: "Design a humane dashboard",
-        subtitle: "***",
-        thumbnail: ""
+        title: "Barriers Around the Globe",
+        subtitle: ["data-viz", "ui", "react"],
+        thumbnail:
+          "https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1567718793437-S88LO15YMEO24TPY77FJ/ke17ZwdGBToddI8pDm48kD_oGUSWuRp2jXjuKEQV3nl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0uQP4rKL2DzwDpL_8M-uv2Gv99tjoV7T51jwj8udRhacRyaqVe9S8fkIl1jipwHGaw/image-asset.png?format=2500w"
+      },
+      event: {
+        title: "Enterprise Event Website",
+        subtitle: ["website", " ui / ux"],
+        thumbnail:
+          "https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1565892149769-4YBP3UW914Q6VLMGA59K/ke17ZwdGBToddI8pDm48kK-6VZ_A-mpZPnQ1J7WFaxp7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwD1g8DYbkhCsgrhnj8CXZYCD5bU3QvC-q6Z8ONLSlwiQbJQ0xI_XvgfUfYGy5Dpw/Cover.jpg"
       }
     },
     currentProject: "default"
   };
-  handleMouseEnter = d => this.setState({ currentProject: d });
+  handleMouseEnter = d => d && this.setState({ currentProject: d });
   handleMouseLeave = () => this.setState({ currentProject: "default" });
-  handleMouseClick = d => this.setState({ currentProject: d });
+  handleMouseClick = d => d && this.setState({ currentProject: d });
   componentDidUpdate() {}
   render() {
     const { projects, currentProject } = this.state;
     return (
-      <SectionWrapper>
+      <SectionWrapper id="works">
         <HorizentalFlex>
           <MenuGroup
             handleMouseEnter={this.handleMouseEnter}
