@@ -190,8 +190,8 @@ class Cyber extends Component {
 //   );
 // };
 
-// export { Cyber };
-export default Cyber;
+export { Cyber };
+// export default Cyber;
 
 // # Creating A Humane Dashboard
 
