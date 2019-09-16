@@ -168,7 +168,7 @@ class WorkScreen extends React.Component {
           "https://media1.tenor.com/images/5a934e84f67d2a61a118ec95b1d6cb74/tenor.gif?itemid=11312357"
       },
       cyber: {
-        title: "Design a Humane Dashboard",
+        title: "Design A Humane Dashboard",
         subtitle: ["product", "ui / ux", "data-viz"],
         thumbnail:
           "https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1562648106933-FFOQ30HRGF252WPDXQN0/ke17ZwdGBToddI8pDm48kDBWDBfmefj1gvev6A5_eqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0o0Xp6UE5J-58PsGFefGLoY1T7k9l5G9NNniEsQShCnRKTdOMGvLMHUO8X0cWJJEWQ/image-asset.png?format=2500w"
