@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "@reach/router";
 
-// https://media1.tenor.com/images/5a934e84f67d2a61a118ec95b1d6cb74/tenor.gif?itemid=11312357
+const screenSizes = {
+  mobile: 400
+};
 function px2rem(px) {
   return px * 0.0625;
 }
@@ -31,10 +33,16 @@ const HorizentalFlex = styled.div`
 
 const MenuWrapper = styled.div`
   width: ${px2rem(422)}rem;
+  /* width: ${px2rem(300)}rem; */
   height: ${px2rem(386)}rem;
   margin-right: ${px2rem(60)}rem;
   border: solid 8px black;
   position: relative;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    width: ${px2rem(300)}rem;
+    margin:0;
+  }
 `;
 
 const MenuOptionWrapper = styled.div`
@@ -42,10 +50,14 @@ const MenuOptionWrapper = styled.div`
   overflow: visible;
   white-space: nowrap;
 `;
+
 const ScreenWrapper = styled.div`
   width: ${px2rem(550)}rem;
   height: ${px2rem(400)}rem;
-  /* background: yellow; */
+  @media (max-width: ${screenSizes.mobile}px) {
+    /* width: ${px2rem(350)}rem; */
+    display: none  
+  }
 `;
 
 const Img = styled.img`

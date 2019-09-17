@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+const screenSizes = {
+  mobile: 400
+};
+
 function px2rem(px) {
   return px * 0.0625;
 }
@@ -16,6 +20,9 @@ const PageWrapper = styled.section`
 
 const Limiter = styled.div`
   width: 31rem;
+  @media (max-width: ${screenSizes.mobile}px) {
+    width: 18rem;
+  }
 `;
 
 const Title = styled.div`
@@ -28,6 +35,10 @@ const Title = styled.div`
 
 const Text = styled.div`
   font-size: ${px2rem(20)}rem;
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(18)}rem;
+  }
+
   font-family: "IBM Plex Sans", "Courier New", Courier, monospace;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -35,6 +46,9 @@ const Text = styled.div`
 
 const Hyper = styled.a`
   font-size: ${px2rem(22)}rem;
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(20)}rem;
+  }
   font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
   margin-right: 2rem;
   color: black;
