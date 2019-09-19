@@ -17,7 +17,7 @@ const PageWrapper = styled.section`
   justify-content: center;
   align-items: center;
   @media (max-width: ${screenSizes.mobile}px) {
-    height: 120vh;
+    height: 110vh;
   }
 `;
 
