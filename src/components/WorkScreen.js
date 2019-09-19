@@ -16,6 +16,9 @@ const SectionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: ${screenSizes.mobile}px) {
+    height: 80vh;
+  }
 `;
 
 const CenterFlex = styled.div`

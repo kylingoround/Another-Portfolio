@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import ReactMarkdown from "react-markdown";
+// import ReactMarkdown from "react-markdown";
 
 import MarkdownLoader from "../util/MarkdownLoader";
 // import CyberMD from "../markdowns/cyber.md";
 import { Link } from "@reach/router";
+import Media from "react-media";
 
 // console.log(CyberMD.toString())
 // @media (max-width: ${screenSizes.mobile}px) {
@@ -139,22 +140,37 @@ const JustBlack = styled.div`
   height: 20rem;
 `;
 
+const FlexColumnMe = styled.div`
+  @media (max-width: ${screenSizes.mobile}px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 const ProjectFooter = () => (
   <FooterWRapper>
     <DarkMe>
-      <div>
+      <FlexColumnMe>
         <StyledLink to="/pipo">
           <EachNavOption>pipo</EachNavOption>
         </StyledLink>
-        <EachNavOption>-</EachNavOption>
+        {/* <EachNavOption>-</EachNavOption> */}
+        <Media
+          query="(min-width: 769px)"
+          render={() => <EachNavOption>-</EachNavOption>}
+        />
         <StyledLink to="/border">
           <EachNavOption>border</EachNavOption>
         </StyledLink>
-        <EachNavOption>-</EachNavOption>
+        {/* <EachNavOption>-</EachNavOption> */}
+        <Media
+          query="(min-width: 769px)"
+          render={() => <EachNavOption>-</EachNavOption>}
+        />
         <StyledLink to="/event">
           <EachNavOption>event</EachNavOption>
         </StyledLink>
-      </div>
+      </FlexColumnMe>
     </DarkMe>
     <CenterMeDiv>
       <StyledLink to="/">

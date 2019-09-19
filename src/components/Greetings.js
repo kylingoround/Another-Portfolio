@@ -3,6 +3,10 @@ import styled from "styled-components";
 import JustRect from "./UI_parts/JustRect";
 import Toggable from "../util/Toggable";
 
+const screenSizes = {
+  mobile: 769
+};
+
 const PageWrapper = styled.section`
   height: 100vh;
   width: 100vw;
@@ -10,6 +14,9 @@ const PageWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: ${screenSizes.mobile}px) {
+    height: 80vh;
+  }
 `;
 
 const MonoText = styled.div`

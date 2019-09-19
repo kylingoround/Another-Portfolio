@@ -16,6 +16,9 @@ const PageWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (max-width: ${screenSizes.mobile}px) {
+    height: 120vh;
+  }
 `;
 
 const Limiter = styled.div`
