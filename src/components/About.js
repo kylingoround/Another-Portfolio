@@ -84,6 +84,9 @@ const About = () => (
       <Hyper href="https://www.linkedin.com/in/kylinschen/" target="_blank">
         linkedin
       </Hyper>
+      <Hyper href="https://www.behance.net/flatroom" target="_blank">
+        behance
+      </Hyper>
       <Text>Always love feedbacks or just to connect:</Text>
       <Hyper>kylingoround@gmail.com</Hyper>
     </Limiter>
