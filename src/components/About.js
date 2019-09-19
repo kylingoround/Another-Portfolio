@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const screenSizes = {
-  mobile: 400
+  mobile: 769
 };
 
 function px2rem(px) {
@@ -21,7 +21,8 @@ const PageWrapper = styled.section`
 const Limiter = styled.div`
   width: 31rem;
   @media (max-width: ${screenSizes.mobile}px) {
-    width: 18rem;
+    /* width: 18rem; */
+    width: 80vw;
   }
 `;
 
