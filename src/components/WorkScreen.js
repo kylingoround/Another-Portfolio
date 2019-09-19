@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "@reach/router";
 
 const screenSizes = {
-  mobile: 400
+  mobile: 769
 };
 function px2rem(px) {
   return px * 0.0625;
