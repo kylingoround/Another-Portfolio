@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import MarkdownLoader from "../util/MarkdownLoader";
-import PIPOMD from "../markdowns/cyber.md";
+// import PIPOMD from "../markdowns/cyber.md";
 import { Link } from "@reach/router";
+
+const screenSizes = {
+  mobile: 769
+};
 
 function px2rem(px) {
   return px * 0.0625;
@@ -13,11 +17,17 @@ const DivWithImageBG = styled.div`
   height: 40vw;
 
   background-image: url("https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
-  /* background-position: center center; */
-  background-size: 100% auto;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-position: center center;
+  background-size: cover;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    height: 80vw;
+  }
 `;
 const BigTitle = styled.div`
   color: white;
@@ -26,11 +36,18 @@ const BigTitle = styled.div`
   font-size: ${px2rem(45)}rem;
   width: 16rem;
   text-transform: uppercase;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(30)}rem;
+  }
 `;
 
 const TextWrapper = styled.div`
   max-width: 900px;
   margin: 0 auto;
+  @media (max-width: ${screenSizes.mobile}px) {
+    width: 80vw;
+  }
 `;
 
 const SubtitleWrapper = styled.div`
@@ -98,11 +115,6 @@ const MainOption = styled.div`
   color: black;
   padding-top: 1rem;
   padding-bottom: 1rem;
-`;
-
-const CoolDottedLine = styled.div`
-  border: 2px dotted black;
-  height: 2rem;
 `;
 
 const JustBlack = styled.div`

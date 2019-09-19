@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Router, Link } from "@reach/router";
-import ReactGA from "react-ga";
+import { Router } from "@reach/router";
+// import ReactGA from "react-ga";
 
 // import { Works, Greetings, WorkScreen } from "./components";
 
@@ -11,7 +11,7 @@ import Main from "./pages/Main";
 import { Cyber, PIPO, Border, Event } from "./projects";
 import "./styles.css";
 
-ReactGA.initialize("UA-74035757-2");
+// ReactGA.initialize("UA-74035757-2");
 
 const App = () => (
   <div>

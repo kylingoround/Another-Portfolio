@@ -5,6 +5,10 @@ import BorderMD from "../markdowns/border.md";
 // https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/57f7efa8a7ade755a3c6e076c19eb36c099d64a6/border.md
 import { Link } from "@reach/router";
 
+const screenSizes = {
+  mobile: 769
+};
+
 function px2rem(px) {
   return px * 0.0625;
 }
@@ -15,10 +19,17 @@ const DivWithImageBG = styled.div`
 
   background-image: url("https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1567719449020-9ZXJDLJ8933BKZZOK53E/ke17ZwdGBToddI8pDm48kMG-5A7T8BxJWMvph8YqY8MUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dgRyFqfAjKRzWQUwPJ_ZG2TvTFc9zJ2nPpuKQFrARZvpCjLISwBs8eEdxAxTptZAUg/image_preview+%2815%29.png?format=2500w");
   /* background-position: center center; */
-  background-size: 100% auto;
+  /* background-size: 100% auto; */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-position: center center;
+  background-size: cover;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    height: 80vw;
+  }
 `;
 const BigTitle = styled.div`
   color: white;
@@ -27,11 +38,18 @@ const BigTitle = styled.div`
   font-size: ${px2rem(45)}rem;
   width: 16rem;
   text-transform: uppercase;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(30)}rem;
+  }
 `;
 
 const TextWrapper = styled.div`
   max-width: 900px;
   margin: 0 auto;
+  @media (max-width: ${screenSizes.mobile}px) {
+    width: 80vw;
+  }
 `;
 
 const SubtitleWrapper = styled.div`
@@ -99,11 +117,6 @@ const MainOption = styled.div`
   color: black;
   padding-top: 1rem;
   padding-bottom: 1rem;
-`;
-
-const CoolDottedLine = styled.div`
-  border: 2px dotted black;
-  height: 2rem;
 `;
 
 const JustBlack = styled.div`

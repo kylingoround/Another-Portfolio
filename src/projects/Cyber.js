@@ -3,10 +3,17 @@ import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
 import MarkdownLoader from "../util/MarkdownLoader";
-import CyberMD from "../markdowns/cyber.md";
+// import CyberMD from "../markdowns/cyber.md";
 import { Link } from "@reach/router";
 
 // console.log(CyberMD.toString())
+// @media (max-width: ${screenSizes.mobile}px) {
+//   font-size: ${px2rem(18)}rem;
+// }
+
+const screenSizes = {
+  mobile: 769
+};
 
 function px2rem(px) {
   return px * 0.0625;
@@ -16,24 +23,40 @@ const DivWithImageBG = styled.div`
   width: 100vw;
   height: 40vw;
   background-image: url("https://i.imgur.com/JwTHkOh.png");
-  /* background-position: center center; */
 
-  background-size: 100% auto;
+  /* background-size: 100% auto; */
+  /* background-size: auto 100%; */
+
+  background-position: center center;
+  background-size: cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    height: 80vw;
+  }
 `;
+
 const BigTitle = styled.div`
   color: white;
   font-family: "IBM Plex Mono", sans-serif;
   font-weight: 700;
   font-size: ${px2rem(45)}rem;
   width: 14rem;
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(30)}rem;
+  }
 `;
 
 const TextWrapper = styled.div`
   max-width: 900px;
   margin: 0 auto;
+  @media (max-width: ${screenSizes.mobile}px) {
+    /* font-size: ${px2rem(30)}rem; */
+    width: 80vw;
+  }
 `;
 
 const SubtitleWrapper = styled.div`
@@ -46,6 +69,9 @@ const SubtitleText = styled.div`
   font-size: ${px2rem(27)}rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(20)}rem;
+  }
 `;
 const SolidLine = styled.div`
   width: 100%;
@@ -103,10 +129,10 @@ const MainOption = styled.div`
   padding-bottom: 1rem;
 `;
 
-const CoolDottedLine = styled.div`
-  border: 2px dotted black;
-  height: 2rem;
-`;
+// const CoolDottedLine = styled.div`
+//   border: 2px dotted black;
+//   height: 2rem;
+// `;
 
 const JustBlack = styled.div`
   background: black;

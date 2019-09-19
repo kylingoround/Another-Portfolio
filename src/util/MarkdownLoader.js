@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import M2J from "markdown-to-jsx";
 import styled from "styled-components";
 
+const screenSizes = {
+  mobile: 769
+};
+
 function px2rem(px) {
   return px * 0.0625;
 }
@@ -35,6 +39,10 @@ const PP = styled.div`
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-weight: 300;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(18)}rem;
+  }
 `;
 
 const Img = styled.img`

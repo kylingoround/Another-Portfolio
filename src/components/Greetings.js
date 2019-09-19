@@ -56,7 +56,7 @@ class Greetings extends React.Component {
   };
   handleHovered = d => {
     this.setState({ isHovered: d });
-    console.log(this.state);
+    // console.log(this.state);
   };
   // handleHovered = () => {
   //   this.setState({ isHovered: !this.state.isHovered });

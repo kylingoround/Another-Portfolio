@@ -4,6 +4,10 @@ import MarkdownLoader from "../util/MarkdownLoader";
 import EventMD from "../markdowns/event.md";
 import { Link } from "@reach/router";
 
+const screenSizes = {
+  mobile: 769
+};
+
 function px2rem(px) {
   return px * 0.0625;
 }
@@ -14,10 +18,17 @@ const DivWithImageBG = styled.div`
 
   background-image: url("https://images.unsplash.com/photo-1457419655743-2e0acc6b5122?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
   /* background-position: center center; */
-  background-size: 100% auto;
+  /* background-size: 100% auto; */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-position: center center;
+  background-size: cover;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    height: 80vw;
+  }
 `;
 const BigTitle = styled.div`
   color: white;
@@ -26,11 +37,19 @@ const BigTitle = styled.div`
   font-size: ${px2rem(45)}rem;
   width: 16rem;
   text-transform: uppercase;
+
+  @media (max-width: ${screenSizes.mobile}px) {
+    font-size: ${px2rem(30)}rem;
+  }
 `;
 
 const TextWrapper = styled.div`
   max-width: 900px;
   margin: 0 auto;
+  @media (max-width: ${screenSizes.mobile}px) {
+    /* font-size: ${px2rem(30)}rem; */
+    width: 80vw;
+  }
 `;
 
 const SubtitleWrapper = styled.div`
