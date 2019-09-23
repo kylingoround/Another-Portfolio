@@ -185,7 +185,7 @@ class Cyber extends Component {
   state = { md: "# I'm loading man" };
   componentDidMount() {
     fetch(
-      "https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/57f7efa8a7ade755a3c6e076c19eb36c099d64a6/cyber.md"
+      "https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/d1a6be5f63d1a675b27849bad19a7390f7363704/cyber.md"
     )
       .then(res => res.text())
       // .then(t => console.log(t));
