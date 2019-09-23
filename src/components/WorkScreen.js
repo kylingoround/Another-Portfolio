@@ -146,6 +146,15 @@ const MenuGroup = props => (
             {props.currentProject === "border" ? "> border" : "border"}
           </StyledLink>
         </MenuText>
+
+        <MenuText
+          onMouseEnter={() => props.handleMouseEnter("hamsa")}
+          onMouseLeave={props.handleMouseLeave}
+        >
+          <StyledLink to={"/hamsa"}>
+            {props.currentProject === "hamsa" ? "> hamsa" : "hamsa"}
+          </StyledLink>
+        </MenuText>
       </MenuOptionWrapper>
     </CenterFlex>
   </MenuWrapper>
@@ -205,6 +214,12 @@ class WorkScreen extends React.Component {
         subtitle: ["website", " ui / ux"],
         thumbnail:
           "https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1565892149769-4YBP3UW914Q6VLMGA59K/ke17ZwdGBToddI8pDm48kK-6VZ_A-mpZPnQ1J7WFaxp7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwD1g8DYbkhCsgrhnj8CXZYCD5bU3QvC-q6Z8ONLSlwiQbJQ0xI_XvgfUfYGy5Dpw/Cover.jpg"
+      },
+      hamsa: {
+        title: "VR Social Experience",
+        subtitle: ["vr", "storytelling"],
+        thumbnail:
+          "https://paper-attachments.dropbox.com/s_CFBDD9739A2ECAB00497FDAB8CA03E62FDFD5049DCDDAC1534608614F1738AD5_1569166297521_image.png"
       }
     },
     currentProject: "default"
