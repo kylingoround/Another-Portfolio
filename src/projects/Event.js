@@ -169,9 +169,10 @@ const ProjectFooter = () => (
 class Event extends Component {
   state = { md: "# I'm loading man" };
   componentDidMount() {
-    fetch(
-      "https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/57f7efa8a7ade755a3c6e076c19eb36c099d64a6/event.md"
-    )
+    // fetch(
+    //   "https://gist.githubusercontent.com/kylingoround/f35d25342a880b92e7520b408730eb24/raw/57f7efa8a7ade755a3c6e076c19eb36c099d64a6/event.md"
+    // )
+    fetch("/assets/markdowns/event.md")
       .then(res => res.text())
       // .then(t => console.log(t));
       .then(t => this.setState({ md: t }));

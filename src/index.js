@@ -8,10 +8,8 @@ import { Router } from "@reach/router";
 import ScrollToTop from "./util/ScrollToTop";
 import Main from "./pages/Main";
 // import Cyber from "./projects/Cyber";
-import { Cyber, PIPO, Border, Event, Hamsa } from "./projects";
+import { Cyber, PIPO, Border, Event, Hamsa, Test } from "./projects";
 import "./styles.css";
-
-// ReactGA.initialize("UA-74035757-2");
 
 const App = () => (
   <div>
@@ -23,6 +21,7 @@ const App = () => (
         <Border path="border" />
         <Event path="event" />
         <Hamsa path="hamsa" />
+        <Test path="test" />
       </ScrollToTop>
     </Router>
   </div>

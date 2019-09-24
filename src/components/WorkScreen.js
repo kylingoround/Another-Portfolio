@@ -108,7 +108,7 @@ const Spam = styled.span`
 
 const MenuGroup = props => (
   <MenuWrapper>
-    <MenuTitle>MENU</MenuTitle>
+    <MenuTitle>ENTRÉE</MenuTitle>
 
     <CenterFlex>
       <MenuOptionWrapper>
@@ -139,20 +139,20 @@ const MenuGroup = props => (
         </MenuText>
 
         <MenuText
-          onMouseEnter={() => props.handleMouseEnter("border")}
-          onMouseLeave={props.handleMouseLeave}
-        >
-          <StyledLink to={"/border"}>
-            {props.currentProject === "border" ? "> border" : "border"}
-          </StyledLink>
-        </MenuText>
-
-        <MenuText
           onMouseEnter={() => props.handleMouseEnter("hamsa")}
           onMouseLeave={props.handleMouseLeave}
         >
           <StyledLink to={"/hamsa"}>
             {props.currentProject === "hamsa" ? "> hamsa" : "hamsa"}
+          </StyledLink>
+        </MenuText>
+
+        <MenuText
+          onMouseEnter={() => props.handleMouseEnter("border")}
+          onMouseLeave={props.handleMouseLeave}
+        >
+          <StyledLink to={"/border"}>
+            {props.currentProject === "border" ? "> border" : "border"}
           </StyledLink>
         </MenuText>
       </MenuOptionWrapper>

@@ -17,7 +17,7 @@ const DivWithImageBG = styled.div`
   width: 100vw;
   height: 40vw;
 
-  background-image: url("https://images.unsplash.com/photo-1500206329404-5057e0aefa48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2110&q=80");
+  background-image: url("%PUBLIC_URL%/assets/markdowns/hamsa.md");
 
   display: flex;
   justify-content: center;
