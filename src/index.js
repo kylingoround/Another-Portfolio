@@ -1,13 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Router } from "@reach/router";
-// import ReactGA from "react-ga";
-
-// import { Works, Greetings, WorkScreen } from "./components";
-
 import ScrollToTop from "./util/ScrollToTop";
 import Main from "./pages/Main";
-// import Cyber from "./projects/Cyber";
 import { Cyber, PIPO, Border, Event, Hamsa, Test } from "./projects";
 import "./styles.css";
 

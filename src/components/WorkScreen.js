@@ -109,6 +109,7 @@ const Spam = styled.span`
 const MenuGroup = props => (
   <MenuWrapper>
     <MenuTitle>ENTRÉE</MenuTitle>
+    {/* <MenuTitle>MENU</MenuTitle> */}
 
     <CenterFlex>
       <MenuOptionWrapper>

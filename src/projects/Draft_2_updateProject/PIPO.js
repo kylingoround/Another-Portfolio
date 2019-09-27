@@ -19,13 +19,12 @@ class PIPO extends Component {
   render() {
     return (
       <StyledMDJSX
-        tags="#product-design #ui/ux #mobile"
-        title="EVENT SHARING MADE EASY"
-        subtitle="Kickstarting a lightweight event-hosting and event-discovering App for Young people in NYC."
-        hasVideo={true}
-        thumbnail="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-        colors={[]}
-        color=""
+        class="showme"
+        tags="#VR #STORYTELLING #YAY"
+        title="BECOMING A GENIE TO YOUR <br/> VR FRIEND"
+        subtitle="Using Gesture-Control To Pair Up Monitor And VR Headset In A Hybrid Social Experience"
+        isVideo="false"
+        mediaUrl="https://player.vimeo.com/video/187478380"
       >
         {this.state.md}
       </StyledMDJSX>

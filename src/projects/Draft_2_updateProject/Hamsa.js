@@ -9,22 +9,22 @@ const StyledMDJSX = styled(MDJSX)`
   justify-content: center;
 `;
 
-class Cyber extends Component {
+class Hamsa extends Component {
   state = { md: "# I'm loading man" };
   componentDidMount() {
-    fetch("/assets/markdowns/cyber.md")
+    fetch("/assets/markdowns/hamsa.md")
       .then(res => res.text())
       .then(t => this.setState({ md: t }));
   }
   render() {
     return (
       <StyledMDJSX
-        tags="# product # ui/ux # data-viz"
-        title="BUILDING A HUMANE DASHBOARD"
-        subtitle="Building Transparent and Trustable A.I. Dashboard for Cybersecurity Operators"
-        hasVideo={true}
-        mediaUrl="https://player.vimeo.com/video/298942394"
-        thumbnail="https://i.imgur.com/JwTHkOh.png"
+        class="showme"
+        tags="#VR #STORYTELLING #YAY"
+        title="BECOMING A GENIE TO YOUR <br/> VR FRIEND"
+        subtitle="Using Gesture-Control To Pair Up Monitor And VR Headset In A Hybrid Social Experience"
+        isVideo="false"
+        mediaUrl="https://player.vimeo.com/video/187478380"
       >
         {this.state.md}
       </StyledMDJSX>
@@ -32,4 +32,4 @@ class Cyber extends Component {
   }
 }
 
-export { Cyber };
+export { Hamsa };

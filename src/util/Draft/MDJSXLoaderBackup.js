@@ -15,6 +15,17 @@ function px2rem(px) {
   return px * 0.0625 + "rem";
 }
 
+// width: 100vw
+// max-width: px2rem(1020) + 'rem';
+
+// theme color with 5 level of gradiants
+
+// grid:
+// images / video: 76%
+// max: 1440 * 76% = 1100px
+// text: 38%
+// hight text: 54%
+
 const themeColor = [
   "#DEF7FC",
   "#B0ECF5",
@@ -37,7 +48,7 @@ const theme = {
   fontSizeMainSubtitle_m: px2rem(18),
 
   fontSizeTags: px2rem(25),
-  fontSizeTags_m: px2rem(20),
+  fontSizeTags_m: px2rem(12),
 
   fontSizeTitle: px2rem(48 * ScaleFactor),
   fontSizeTitle_m: px2rem(36 * ScaleFactor),
@@ -332,7 +343,7 @@ const MainTitle = props => {
 };
 const MainSubtitle = props => {
   const MainSubtitleWrapper = styled.div`
-    margin: 1.5rem auto 1.5rem auto;
+    margin: 2rem auto 0 auto;
     width: ${theme.grid_3};
     font-size: ${theme.fontSizeMainSubtitle};
     font-family: ${theme.fontFamilyMono};
@@ -344,30 +355,33 @@ const MainSubtitle = props => {
       font-size: ${theme.fontSizeMainSubtitle_m};
       width: ${theme.grid_3_m};
       font-weight: 500;
-      margin: 1rem auto 1rem auto;
     }
   `;
   return <MainSubtitleWrapper>{props.children}</MainSubtitleWrapper>;
 };
 
-const NotUL = styled.ul`
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 0em;
-  margin-block-end: 0em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+// margin: 3rem auto ${theme.universalMarginBottom} auto;
+// width: ${theme.grid_2};
+// font-size: ${theme.fontSizeSubtext};
+// font-weight: 700;
+
+const UList = styled.ul`
+  position: relative;
+  width: ${theme.grid - 3};
+  left: -2rem;
+  font-size: ${theme.fontSizeParagraph};
 `;
 
+const List = styled.li``;
+
 const BulletPoint = styled.div`
-  margin: 0 auto 0 auto;
+  margin: 0 auto ${theme.universalMarginBottom} auto;
   width: ${theme.grid_2};
   font-size: ${theme.fontSizeParagraph};
   font-family: ${theme.fontFamilySans};
   font-weight: 700;
   position: relative;
-  left: -2.6rem;
+  left: -2rem;
 
   @media (max-width: ${screenSizes.mobile}px) {
     width: ${theme.grid_3_m};
@@ -399,199 +413,59 @@ const PageWrapper = styled.div`
   }
 `;
 
-const ResponsiveVideo = props => {
-  const Wrapper = styled.div`
-    width: ${theme.grid_3};
-    height: auto;
-    margin: 4rem auto;
-
-    @media (max-width: ${screenSizes.mobile}px) {
-      width: ${theme.grid_3_m};
-      margin: 2rem auto;
-    }
-  `;
-  return (
-    <Wrapper>
-      <ResponsiveEmbed
-        src={props.src + "?title=0&byline=0&portrait=0"}
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-        title="video"
-      />
-    </Wrapper>
-  );
-};
-
-// = styled(ResponsiveEmbed)`
-//   width: ${theme.grid_3};
-//   margin: 2rem auto 2rem auto;
-// `;
-
-// const PageIntroTest = props => {
-//   const DivWithImageBG = styled.div`
-//     width: 100vw;
-//     height: 40vw;
-
-//     background-image: url("https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1567719449020-9ZXJDLJ8933BKZZOK53E/ke17ZwdGBToddI8pDm48kMG-5A7T8BxJWMvph8YqY8MUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dgRyFqfAjKRzWQUwPJ_ZG2TvTFc9zJ2nPpuKQFrARZvpCjLISwBs8eEdxAxTptZAUg/image_preview+%2815%29.png?format=2500w");
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     background-position: center center;
-//     background-size: cover;
-
-//     @media (max-width: ${screenSizes.mobile}px) {
-//       height: 80vw;
-//     }
-//   `;
-
-//   const BigTitle = styled.div`
-//     color: white;
-//     font-family: "IBM Plex Mono", sans-serif;
-//     font-weight: 700;
-//     font-size: ${px2rem(45)}rem;
-//     width: 16rem;
-//     text-transform: uppercase;
-
-//     @media (max-width: ${screenSizes.mobile}px) {
-//       font-size: ${px2rem(30)}rem;
-//     }
-//   `;
-
-//   const SolidLine = styled.div`
-//     width: 100%;
-//     height: 0.4rem;
-//     background: black;
-//   `;
-
-//   return (
-//     <div>
-//       {" "}
-//       <DivWithImageBG>
-//         <BigTitle>OTHER BARRIERS</BigTitle>
-//       </DivWithImageBG>
-//     </div>
-//   );
-// };
-
-const PageIntro = props => {
-  // add background-image instead of background color
-
-  let theColor;
-  props.themeColor ? (theColor = props.themeColor) : (theColor = "white");
-  console.log(theColor);
-
-  const PageIntroWrapper = styled.div`
-    background: black;
-    height: 60vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-
-    /* background-image: url("https://i.imgur.com/JwTHkOh.png"); */
-    background-image: url(${props.thumbnail});
-    background-position: center center;
-    background-size: cover;
-
-    @media (max-width: ${screenSizes.mobile}px) {
-      margin-bottom: 1.5rem;
-    }
-  `;
-
-  const LineBreak = styled.div`
-    /* width: 100%; */
-    width: ${theme.grid_3};
-    margin: 0 auto;
-
-    height: 0.4rem;
-    background: black;
-
-    @media (max-width: ${screenSizes.mobile}px) {
-      width: ${theme.grid_3_m};
-    }
-  `;
-
-  const PageIntroTitle = styled.div`
-    width: ${theme.grid_3};
-
-    font-size: ${theme.fontSizeMainTitle};
-    font-family: ${theme.fontFamilyMono};
-    font-weight: 700;
-
-    /* color: ${theme.colors[5]}; */
-    color: ${theColor};
-    @media (max-width: ${screenSizes.mobile}px) {
-      width: ${theme.grid_3_m};
-      font-size: ${theme.fontSizeMainTitle_m};
-    }
-  `;
-
-  const PageIntroTag = styled.div`
-    width: ${theme.grid_3};
-    margin: 0 auto;
-    position: absolute;
-    bottom: 1rem;
-    text-transform: uppercase;
-
-    font-size: ${theme.fontSizeTags};
-    font-family: ${theme.fontFamilyMono};
-    font-weight: 700;
-
-    /* color: ${theme.colors[5]}; */
-    color: ${theColor};
-
-    @media (max-width: ${screenSizes.mobile}px) {
-      width: ${theme.grid_3_m};
-      font-size: ${theme.fontSizeTags_m};
-    }
-  `;
-
-  console.log(props.mediaUrl + "?title=0&byline=0&portrait=0");
-
-  return (
-    <>
-      <PageIntroWrapper>
-        <PageIntroTitle>{props.title}</PageIntroTitle>
-        <PageIntroTag>{props.tags}</PageIntroTag>
-      </PageIntroWrapper>
-      <LineBreak />
-      <MainSubtitle>{props.subtitle}</MainSubtitle>
-      <LineBreak />
-
-      {props.mediaUrl ? (
-        <ResponsiveVideo
-          src={props.mediaUrl + "?title=0&byline=0&portrait=0"}
-        />
-      ) : null}
-
-      {/* <div>also a video / image I guess to showoff</div> */}
-    </>
-  );
-};
+// Video's Dad
 
 const MDJSX = props => (
   <>
-    <PageIntro {...props} />
     <PageWrapper>
-      {/* <MainSubtitle>{props.subtitle}</MainSubtitle> */}
+      <TopDecor />
+      {/* <TopTags>#VR #STORYTELLING #YAY</TopTags> */}
+      <TopTags>{props.tags}</TopTags>
+      {/* <MainTitle>
+        BECOMING A GENIE TO YOUR <br /> VR FRIEND
+      </MainTitle> */}
+      <MainTitle>{props.title}</MainTitle>
+
+      <Image src={props.mediaUrl} />
+
+      {props.isVideo ? (
+        <Dad>
+          <ResponsiveEmbed
+            // src={
+            //   "https://player.vimeo.com/video/187478380" +
+            //   "?title=0&byline=0&portrait=0"
+            // }
+            src={props.mediaUrl + "?title=0&byline=0&portrait=0"}
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            title="video"
+          />
+        </Dad>
+      ) : (
+        <Image src={props.mediaUrl} />
+      )}
+
+      {/* <MainSubtitle>
+        Using gesture-control to pair up monitor and VR headset in a hybrid
+        social experience
+      </MainSubtitle> */}
+      <MainSubtitle>{props.subtitle}</MainSubtitle>
       <StyledMDX
         options={{
           overrides: {
             h1: Header1,
             p: ParagraphText,
             img: DefaultImage,
-            ul: NotUL,
+            // ul: UList,
+            // li: List,
             TwinImages,
             Subtext,
+            // ResponsiveVideo,
             HighlightText,
             Image,
             SectionBreak,
-            BulletPoint,
-            ResponsiveVideo
+            BulletPoint
           },
           forceBlock: true
         }}
@@ -625,20 +499,164 @@ export default MDJSX;
 
 // also an alias configuration file
 
-// {/* <TopDecor /> */}
-// {/* <TopTags>{props.tags}</TopTags> */}
-// {/* <MainTitle>{props.title}</MainTitle> */}
-// {/* <Image src={props.mediaUrl} /> */}
-// {/* {props.isVideo ? (
-//   <Dad>
-//     <ResponsiveEmbed
-//       src={props.mediaUrl + "?title=0&byline=0&portrait=0"}
+// const VideoWrapper = styled.div`
+//   /* width: 76%; */
+//   width: ${theme.gridExtended};
+//   height: auto;
+//   padding: 56.25% 0 0 0;
+//   position: relative;
+//   margin: 0 auto;
+
+//   /* margin-top: 2rem; */
+//   /* margin-bottom: 2rem; */
+// `;
+
+// const StylediFrame = styled.iframe`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   /* height: auto; */
+// `;
+
+// const ResponsiveVideo = props => (
+//   <VideoWrapper>
+//     <StylediFrame
+//       src={props.src + "?title=0&byline=0&portrait=0"}
 //       frameBorder="0"
-//       allow="autoplay; fullscreen"
-//       allowFullScreen
+//       // allow="autoplay; fullscreen"
+//       // allowFullScreen
 //       title="video"
 //     />
-//   </Dad>
-// ) : (
-//   <Image src={props.mediaUrl} />
-// )} */}
+//   </VideoWrapper>
+// );
+
+// const TwinImagesWrapper = styled.div`
+//   width: 100%;
+//   height: auto;
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+//   display: flex;
+//   flex-direction: row;
+
+//   /* background: teal; */
+// `;
+
+// const Twin = styled.img`
+//   width: 49%;
+//   height: auto;
+//   margin-right: 2%;
+// `;
+
+// const TwinImages = props => (
+//   <TwinImagesWrapper>
+//     {/* {props.left && <div>hello</div>} */}
+//     {/* {props.right && <div>hello</div>} */}
+
+//     {props.left && <Twin alt={"test"} src={props.left} />}
+//     {props.right && <Twin alt={"test"} src={props.right} />}
+//   </TwinImagesWrapper>
+// );
+
+// ///////////////
+// const H1 = styled.h1`
+//   color: black;
+//   text-align: left;
+//   font-family: "IBM Plex Mono", "Courier New", Courier, monospace;
+//   /* font-size: ${px2rem(30)}rem; */
+//   font-size: ${px2rem(45)}rem;
+
+//   font-weight: 700;
+//   margin-top: 4rem;
+//   margin-bottom: 4rem;
+//   text-transform: uppercase;
+// `;
+
+// const H2 = styled.h2`
+//   text-align: left;
+//   /* font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif; */
+//   font-family: "Manjari", Arial, Helvetica, sans-serif;
+//   font-size: ${px2rem(20)}rem;
+//   font-weight: 700;
+// `;
+
+// const H3 = styled.h2`
+//   text-align: left;
+//   /* font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif; */
+//   font-family: "Manjari", Arial, Helvetica, sans-serif;
+//   font-size: ${px2rem(20)}rem;
+//   font-weight: 700;
+// `;
+
+// const PP = styled.div`
+//   text-align: left;
+//   font-size: ${px2rem(22)}rem;
+//   /* font-size: 24px; */
+//   font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+//   /* font-family: "Manjari", Arial, Helvetica, sans-serif; */
+//   padding-top: 0.5rem;
+//   padding-bottom: 0.5rem;
+//   font-weight: 300;
+
+//   line-height: 2.5rem;
+
+//   @media (max-width: ${screenSizes.mobile}px) {
+//     font-size: ${px2rem(18)}rem;
+//   }
+// `;
+
+// const Img = styled.img`
+//   /* max-height: 20vh; */
+//   width: 100%;
+//   height: auto;
+//   margin-top: 1rem;
+//   margin-bottom: 1rem;
+// `;
+
+// new stuf here
+
+// const TwinImagesWrapper = styled.div`
+//   width: 100%;
+//   height: auto;
+//   padding-top: 2rem;
+//   padding-bottom: 2rem;
+//   display: flex;
+//   flex-direction: row;
+
+//   /* background: teal; */
+// `;
+
+// const Twin = styled.img`
+//   width: 49%;
+//   height: auto;
+//   margin-right: 2%;
+// `;
+
+// const TwinImages = props => (
+//   <TwinImagesWrapper>
+//     {/* {props.left && <div>hello</div>} */}
+//     {/* {props.right && <div>hello</div>} */}
+
+//     {props.left && <Twin alt={"test"} src={props.left} />}
+//     {props.right && <Twin alt={"test"} src={props.right} />}
+//   </TwinImagesWrapper>
+// );
+
+// italic
+// const Subtext = styled.div`
+//   font-size: ${px2rem(18)}rem;
+//   font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+//   margin-top: 1rem;
+//   margin-bottom: 1rem;
+//   line-height: 2rem;
+// `;
+
+// const BulletPoints = styled.div`
+//   font-size: ${px2rem(20)}rem;
+//   font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+//   /* line-height: 0.8rem; */
+//   margin-left: -2.5rem;
+// `;
+
+//

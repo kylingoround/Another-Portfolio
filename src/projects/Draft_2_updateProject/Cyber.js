@@ -19,12 +19,11 @@ class Cyber extends Component {
   render() {
     return (
       <StyledMDJSX
-        tags="# product # ui/ux # data-viz"
-        title="BUILDING A HUMANE DASHBOARD"
-        subtitle="Building Transparent and Trustable A.I. Dashboard for Cybersecurity Operators"
-        hasVideo={true}
-        mediaUrl="https://player.vimeo.com/video/298942394"
-        thumbnail="https://i.imgur.com/JwTHkOh.png"
+        tags="#VR #STORYTELLING #YAY"
+        title="BECOMING A GENIE TO YOUR VR FRIEND"
+        subtitle="Using Gesture-Control To Pair Up Monitor And VR Headset In A Hybrid Social Experience"
+        isVideo="false"
+        mediaUrl="https://player.vimeo.com/video/187478380"
       >
         {this.state.md}
       </StyledMDJSX>
