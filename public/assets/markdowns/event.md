@@ -2,7 +2,7 @@
 
 SMEs (Small-to-Medium Enterprises) are said to be the backbones of economics in many countries, contributing to over 60% of GDP in China and 44% in America. Bank of China was working with partners to host a conference in which SME from both country will have a 1-on-1 meeting to discuss potential partnership. I worked with a team of developers, project managers and the client to create a website that display key information such as location and time, and let SME users sign up and pair with each other. Key challenges of this project included creating a visual design that complies with client’s branding guidelines; simplify a registration process; creating responsive web design and collaborating closely with each team member to meet a tight deadline.
 
-f![](https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1565891407923-373S488IT8FQ9K0ZD42B/ke17ZwdGBToddI8pDm48kEcWoO4JUR--_37RtKGuv1N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pmy3nA_zcH46jcY3zQ1h8ibGTG53pNH25n7uCJuOTEoPRO5iN8_U739CkBbQyQRqQ/Cover.jpg?format=2500w)
+![](https://images.squarespace-cdn.com/content/v1/58ec7896725e25240ec4c731/1565891407923-373S488IT8FQ9K0ZD42B/ke17ZwdGBToddI8pDm48kEcWoO4JUR--_37RtKGuv1N7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pmy3nA_zcH46jcY3zQ1h8ibGTG53pNH25n7uCJuOTEoPRO5iN8_U739CkBbQyQRqQ/Cover.jpg?format=2500w)
 
 # My Role
 
