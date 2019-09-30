@@ -130,14 +130,14 @@ const MenuGroup = props => (
           </StyledLink>
         </MenuText>
 
-        <MenuText
+        {/* <MenuText
           onMouseEnter={() => props.handleMouseEnter("event")}
           onMouseLeave={props.handleMouseLeave}
         >
           <StyledLink to={"/event"}>
             {props.currentProject === "event" ? "> event" : "event"}
           </StyledLink>
-        </MenuText>
+        </MenuText> */}
 
         <MenuText
           onMouseEnter={() => props.handleMouseEnter("hamsa")}
