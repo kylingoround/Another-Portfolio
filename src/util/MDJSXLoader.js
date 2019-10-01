@@ -28,6 +28,11 @@ const themeColor = [
   "#00636A"
 ];
 
+const Redsquare = styled.div`
+  width: 100%;
+  height: 1.5rem;
+`;
+
 const theme = {
   // font-size
   fontSizeMainTitle: px2rem(50),
@@ -88,7 +93,7 @@ const BasicText = styled.div`
 `;
 
 const Header1 = styled(BasicText)`
-  margin: 6rem auto 1rem auto;
+  margin: 3rem auto 1rem auto;
 
   width: ${theme.grid_2};
   font-size: ${theme.fontSizeTitle};
@@ -98,7 +103,7 @@ const Header1 = styled(BasicText)`
 
   @media (max-width: ${screenSizes.mobile}px) {
     width: ${theme.grid_3_m};
-    margin: 3rem auto 0.5rem auto;
+    margin: 2rem auto 0.5rem auto;
     font-size: ${theme.fontSizeTitle_m};
   }
 `;
@@ -213,7 +218,8 @@ const Image = props => {
     margin: 0 auto ${theme.universalMarginBottom} auto;
 
     @media (max-width: ${screenSizes.mobile}px) {
-      width: ${theme.grid_3_m};
+      /* width: ${theme.grid_3_m}; */
+      width: 100vw;
       margin: 0 auto ${theme.universalMarginBottom_m} auto;
     }
   `;
@@ -406,7 +412,8 @@ const ResponsiveVideo = props => {
     margin: 4rem auto;
 
     @media (max-width: ${screenSizes.mobile}px) {
-      width: ${theme.grid_3_m};
+      /* width: ${theme.grid_3_m}; */
+      width: 100%;
       margin: 2rem auto;
     }
   `;
@@ -591,7 +598,8 @@ const MDJSX = props => (
             Image,
             SectionBreak,
             BulletPoint,
-            ResponsiveVideo
+            ResponsiveVideo,
+            Redsquare
           },
           forceBlock: true
         }}

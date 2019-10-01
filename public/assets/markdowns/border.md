@@ -1,7 +1,7 @@
 <!-- ![](https://paper-attachments.dropbox.com/s_D05655C47811550445C848F53FC5B1515762943486940BEB0178134B63D6576E_1567623137996_image.png) -->
-<br/>
-<br/>
-<br/>
+<!-- <br/> -->
+
+<Redsquare />
 
 <Image src='https://paper-attachments.dropbox.com/s_D05655C47811550445C848F53FC5B1515762943486940BEB0178134B63D6576E_1567623137996_image.png'/>
 
