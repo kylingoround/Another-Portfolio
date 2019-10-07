@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ResponsiveEmbed from "react-responsive-embed";
 import Media from "react-media";
 import ProjectFooter from "../components/UI_parts/ProjectFooter";
+import ScrollToTopOnMount from "../util/ScrollToTopOnMount";
 
 const screenSizes = {
   mobile: 769
@@ -582,6 +583,7 @@ const PageIntro = props => {
 
 const MDJSX = props => (
   <>
+    <ScrollToTopOnMount />
     <PageIntro {...props} />
     <PageWrapper>
       {/* <MainSubtitle>{props.subtitle}</MainSubtitle> */}
