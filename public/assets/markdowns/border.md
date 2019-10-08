@@ -5,7 +5,9 @@
 
 <Image src='https://paper-attachments.dropbox.com/s_D05655C47811550445C848F53FC5B1515762943486940BEB0178134B63D6576E_1567623137996_image.png'/>
 
-## Play it live [here](https://f8uke.csb.app/).
+<!-- ## Play it live [here](https://f8uke.csb.app/). -->
+
+## Play it live [here](https://borderbarrier.netlify.com/).
 
 <!-- ![front top to bottom:  Mexico-US barrier, Belize–Guatemala, and a proposed Nicaragua–Costa barrier. All three are anti-immigration barriers](https://paper-attachments.dropbox.com/s_D05655C47811550445C848F53FC5B1515762943486940BEB0178134B63D6576E_1567617150673_image.png) -->
 
