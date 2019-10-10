@@ -87,6 +87,9 @@ const About = () => (
       <Hyper href="https://www.behance.net/flatroom" target="_blank">
         behance
       </Hyper>
+      <Hyper href="https://codepen.io/Kylin/pens/" target="_blank">
+        codepen
+      </Hyper>
       <Text>Always love feedbacks or just to connect:</Text>
       <Hyper>kylingoround@gmail.com</Hyper>
     </Limiter>

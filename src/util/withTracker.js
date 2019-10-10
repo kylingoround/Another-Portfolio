@@ -3,8 +3,8 @@ import GoogleAnalytics from "react-ga";
 
 // https://github.com/react-ga/react-ga/wiki/React-Router-v4-withTracker
 
-// GoogleAnalytics.initialize("UA-74035757-2");
-GoogleAnalytics.initialize("UA-00000000-2");
+GoogleAnalytics.initialize("UA-74035757-2");
+// GoogleAnalytics.initialize("UA-00000000-2");
 
 const withTracker = (WrappedComponent, options = {}) => {
   const trackPage = page => {
