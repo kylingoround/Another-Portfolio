@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 // import { Router } from "@reach/router";
 import ScrollToTop from "./util/ScrollToTop";
@@ -42,8 +42,24 @@ const App = () => (
     <Route path="/border" component={withTracker(Border)} />
     <Route path="/event" component={withTracker(Event)} />
     <Route path="/hamsa" component={withTracker(Hamsa)} />
+    {/* <Route path="/pdf">
+      <Redirect
+        exact
+        to="https://www.dropbox.com/s/eu5hsezuvjndu7v/cyber_kylin_optimized.pdf?dl=0"
+      />
+    </Route> */}
+    <Route
+      path="/pdf"
+      component={() => {
+        window.location.href =
+          "https://www.dropbox.com/s/eu5hsezuvjndu7v/cyber_kylin_optimized.pdf?dl=0";
+        return null;
+      }}
+    />
   </Router>
 );
+
+// redirect: https://stackoverflow.com/questions/42914666/react-router-external-link
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
