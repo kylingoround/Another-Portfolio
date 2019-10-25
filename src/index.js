@@ -42,12 +42,7 @@ const App = () => (
     <Route path="/border" component={withTracker(Border)} />
     <Route path="/event" component={withTracker(Event)} />
     <Route path="/hamsa" component={withTracker(Hamsa)} />
-    {/* <Route path="/pdf">
-      <Redirect
-        exact
-        to="https://www.dropbox.com/s/eu5hsezuvjndu7v/cyber_kylin_optimized.pdf?dl=0"
-      />
-    </Route> */}
+
     <Route
       path="/pdf"
       component={() => {
@@ -56,8 +51,19 @@ const App = () => (
         return null;
       }}
     />
+
+    <Route
+      path="/megvii"
+      component={() => {
+        window.location.href =
+          "https://www.dropbox.com/s/v78xej464ukej1a/megvii_slider_optimized.pdf?dl=0";
+        return null;
+      }}
+    />
   </Router>
 );
+
+// https://www.dropbox.com/s/v78xej464ukej1a/megvii_slider_optimized.pdf?dl=0
 
 // redirect: https://stackoverflow.com/questions/42914666/react-router-external-link
 
