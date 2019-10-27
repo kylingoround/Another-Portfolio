@@ -239,7 +239,8 @@ const Image = props => {
 
 const TwinImages = props => {
   const TwinImagesWrapper = styled.div`
-    width: ${theme.grid_3};
+    /* width: ${theme.grid_3}; */
+    width: 100%;
     height: auto;
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -249,9 +250,20 @@ const TwinImages = props => {
   `;
 
   const Twin = styled.img`
+    display: block;
     width: 50%;
     height: auto;
     margin-right: 2%;
+  `;
+
+  const TwinWrapper = styled.div`
+    width: 50%;
+    margin-right: 2%;
+  `;
+
+  const StyledImage = styled.img`
+    width: 100%;
+    height: auto;
   `;
 
   return (
@@ -265,8 +277,18 @@ const TwinImages = props => {
             </>
           ) : (
             <TwinImagesWrapper>
-              {props.left && <Twin alt={"test"} src={props.left} />}
-              {props.right && <Twin alt={"test"} src={props.right} />}
+              {props.left && (
+                // <Twin alt={"test"} className="twin" src={props.left} />
+                <TwinWrapper>
+                  <StyledImage src={props.left} alt="test" />
+                </TwinWrapper>
+              )}
+              {props.right && (
+                // <Twin alt={"test"} className="twin" src={props.right} />
+                <TwinWrapper>
+                  <StyledImage src={props.right} alt="test" />
+                </TwinWrapper>
+              )}
             </TwinImagesWrapper>
           )
         }
