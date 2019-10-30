@@ -60,6 +60,15 @@ const App = () => (
         return null;
       }}
     />
+
+    <Route
+      path="/pipopdf"
+      component={() => {
+        window.location.href =
+          "https://www.dropbox.com/s/j7zkt3t1yk8wdfy/pipo_reduced.pdf?dl=0";
+        return null;
+      }}
+    />
   </Router>
 );
 
